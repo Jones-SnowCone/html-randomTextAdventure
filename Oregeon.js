@@ -9,6 +9,7 @@ OregonH.Caravan.init = function(stats){
   this.money = stats.money;
   this.firepower = stats.firepower;
 };
+
 //update weight and capacity
 OregonH.Caravan.updateWeight = function(){
   var droppedFood = 0;
@@ -36,6 +37,7 @@ OregonH.Caravan.updateWeight = function(){
     this.ui.notify('Left '+droppedFood+' food provisions behind', 'negative');
   }
 };
+
 //update covered distance
 OregonH.Caravan.updateDistance = function() {
   //the closer to capacity, the slower
@@ -43,6 +45,7 @@ OregonH.Caravan.updateDistance = function() {
   var speed = OregonH.SLOW_SPEED + diff/this.capacity * OregonH.FULL_SPEED;
   this.distance += speed;
 };
+
 //food consumption
 OregonH.Caravan.consumeFood = function() {
   this.food -= this.crew * OregonH.FOOD_PER_PERSON;
